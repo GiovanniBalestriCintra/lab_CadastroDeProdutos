@@ -17,17 +17,8 @@ namespace lab_CadastroDeProdutos
         {
             InitializeComponent();
         }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        
+        
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
@@ -35,48 +26,24 @@ namespace lab_CadastroDeProdutos
                 e.Handled = true;
             }
         }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-
-        }
+               
 
         private void buttonSalvar_Click(object sender, EventArgs e)
         {
-            string codigo = textCodigo.Text;
-            string nome = textNomeDoProduto.Text;
+            string codigo = txtCodigo.Text;
+            string nome = txtNomeDoProduto.Text;
             string categoria = comboBoxCategoria.Text;
-            string fornecedor = textFornecedor.Text;
-            string descricao = textDescricao.Text;
+            string fornecedor = txtFornecedor.Text;
+            string descricao = txtDescricao.Text;
 
-            decimal precoCusto = numericUpDownPrecoDeCusto.Value;
-            decimal precoVenda = numericUpDownPrecoDeVenda.Value;
-            decimal margem = decimal.Parse(textMargem.Text);
-            decimal estoque = numericUpDownStockInicial.Value;
-            decimal estoqueMinimo = numericUpDownStockMinimo.Value;
+            decimal precoCusto = numericPrecoDeCusto.Value;
+            decimal precoVenda = numericPrecoDeVenda.Value;
+            decimal.TryParse(txtMargem.Text, out decimal margem);
+            decimal estoque = numericStockInicial.Value;
+            decimal estoqueMinimo = numericStockMinimo.Value;
 
-            bool ativo = checkBoxprodutoAtivo.Checked;
-            DateTime dataCadastro = dateTimePickerDataDeCadastro.Value;
+            bool ativo = checkProdutoAtivo.Checked;
+            DateTime dataCadastro = dateDataDeCadastro.Value;
 
             MessageBox.Show(
                 $"Produto: {nome}\n" +
@@ -85,9 +52,6 @@ namespace lab_CadastroDeProdutos
             );
         }
 
-        private void numericUpDownStockMinimo_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }
