@@ -84,5 +84,10 @@ namespace lab_CadastroDeProdutos
                 "Produto Salvo"
             );
         }
+
+        private void numericUpDownStockMinimo_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
