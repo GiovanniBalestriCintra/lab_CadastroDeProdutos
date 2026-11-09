@@ -32,7 +32,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.texCodigo = new System.Windows.Forms.TextBox();
+            this.textCodigo = new System.Windows.Forms.TextBox();
             this.textNomeDoProduto = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -59,7 +59,8 @@
             this.buttonSalvar = new System.Windows.Forms.Button();
             this.buttonLimpar = new System.Windows.Forms.Button();
             this.buttonExcluir = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBoxCategoria = new System.Windows.Forms.ComboBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -68,6 +69,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPrecoDeVenda)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownStockMinimo)).BeginInit();
             this.groupBox3.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -94,7 +96,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.comboBoxCategoria);
             this.groupBox1.Controls.Add(this.textDescricao);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.textFornecedor);
@@ -103,7 +105,7 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.textNomeDoProduto);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.texCodigo);
+            this.groupBox1.Controls.Add(this.textCodigo);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.MidnightBlue;
             this.groupBox1.Location = new System.Drawing.Point(13, 74);
@@ -125,14 +127,14 @@
             this.label2.Text = "Codigo:";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // texCodigo
+            // textCodigo
             // 
-            this.texCodigo.Location = new System.Drawing.Point(8, 52);
-            this.texCodigo.Name = "texCodigo";
-            this.texCodigo.Size = new System.Drawing.Size(149, 24);
-            this.texCodigo.TabIndex = 0;
-            this.texCodigo.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            this.texCodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.textCodigo.Location = new System.Drawing.Point(8, 52);
+            this.textCodigo.Name = "textCodigo";
+            this.textCodigo.Size = new System.Drawing.Size(149, 24);
+            this.textCodigo.TabIndex = 0;
+            this.textCodigo.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textCodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // textNomeDoProduto
             // 
@@ -384,9 +386,9 @@
             // 
             // buttonNovo
             // 
-            this.buttonNovo.Location = new System.Drawing.Point(191, 414);
+            this.buttonNovo.Location = new System.Drawing.Point(441, 15);
             this.buttonNovo.Name = "buttonNovo";
-            this.buttonNovo.Size = new System.Drawing.Size(93, 57);
+            this.buttonNovo.Size = new System.Drawing.Size(93, 35);
             this.buttonNovo.TabIndex = 20;
             this.buttonNovo.Text = "➕ Novo";
             this.buttonNovo.UseVisualStyleBackColor = true;
@@ -394,56 +396,66 @@
             // 
             // buttonSalvar
             // 
-            this.buttonSalvar.Location = new System.Drawing.Point(300, 414);
+            this.buttonSalvar.Location = new System.Drawing.Point(540, 15);
             this.buttonSalvar.Name = "buttonSalvar";
-            this.buttonSalvar.Size = new System.Drawing.Size(93, 57);
+            this.buttonSalvar.Size = new System.Drawing.Size(93, 35);
             this.buttonSalvar.TabIndex = 21;
             this.buttonSalvar.Text = "💾 Salvar";
             this.buttonSalvar.UseVisualStyleBackColor = true;
+            this.buttonSalvar.Click += new System.EventHandler(this.buttonSalvar_Click);
             // 
             // buttonLimpar
             // 
-            this.buttonLimpar.Location = new System.Drawing.Point(409, 414);
+            this.buttonLimpar.Location = new System.Drawing.Point(639, 15);
             this.buttonLimpar.Name = "buttonLimpar";
-            this.buttonLimpar.Size = new System.Drawing.Size(88, 57);
+            this.buttonLimpar.Size = new System.Drawing.Size(88, 35);
             this.buttonLimpar.TabIndex = 22;
             this.buttonLimpar.Text = "🧹 Limpar\n";
             this.buttonLimpar.UseVisualStyleBackColor = true;
             // 
             // buttonExcluir
             // 
-            this.buttonExcluir.Location = new System.Drawing.Point(511, 414);
+            this.buttonExcluir.Location = new System.Drawing.Point(733, 15);
             this.buttonExcluir.Name = "buttonExcluir";
-            this.buttonExcluir.Size = new System.Drawing.Size(88, 57);
+            this.buttonExcluir.Size = new System.Drawing.Size(88, 35);
             this.buttonExcluir.TabIndex = 23;
             this.buttonExcluir.Text = "🗑️ Excluir";
             this.buttonExcluir.UseVisualStyleBackColor = true;
             this.buttonExcluir.Click += new System.EventHandler(this.button4_Click);
             // 
-            // comboBox1
+            // comboBoxCategoria
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.comboBoxCategoria.FormattingEnabled = true;
+            this.comboBoxCategoria.Items.AddRange(new object[] {
             "Eletrônicos",
             "Alimentos",
             "Roupas",
             "Bebidas",
             "Higiene",
             "Outros"});
-            this.comboBox1.Location = new System.Drawing.Point(569, 52);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(178, 26);
-            this.comboBox1.TabIndex = 10;
+            this.comboBoxCategoria.Location = new System.Drawing.Point(569, 52);
+            this.comboBoxCategoria.Name = "comboBoxCategoria";
+            this.comboBoxCategoria.Size = new System.Drawing.Size(178, 26);
+            this.comboBoxCategoria.TabIndex = 10;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel2.Controls.Add(this.buttonExcluir);
+            this.panel2.Controls.Add(this.buttonNovo);
+            this.panel2.Controls.Add(this.buttonSalvar);
+            this.panel2.Controls.Add(this.buttonLimpar);
+            this.panel2.Location = new System.Drawing.Point(-2, 459);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(842, 53);
+            this.panel2.TabIndex = 24;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(831, 510);
-            this.Controls.Add(this.buttonExcluir);
-            this.Controls.Add(this.buttonLimpar);
-            this.Controls.Add(this.buttonSalvar);
-            this.Controls.Add(this.buttonNovo);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -462,6 +474,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownStockMinimo)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -471,7 +484,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox texCodigo;
+        private System.Windows.Forms.TextBox textCodigo;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -499,7 +512,8 @@
         private System.Windows.Forms.Button buttonSalvar;
         private System.Windows.Forms.Button buttonLimpar;
         private System.Windows.Forms.Button buttonExcluir;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBoxCategoria;
+        private System.Windows.Forms.Panel panel2;
     }
 }
 

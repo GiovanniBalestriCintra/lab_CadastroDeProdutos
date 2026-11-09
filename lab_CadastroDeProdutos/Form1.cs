@@ -60,5 +60,29 @@ namespace lab_CadastroDeProdutos
         {
 
         }
+
+        private void buttonSalvar_Click(object sender, EventArgs e)
+        {
+            string codigo = textCodigo.Text;
+            string nome = textNomeDoProduto.Text;
+            string categoria = comboBoxCategoria.Text;
+            string fornecedor = textFornecedor.Text;
+            string descricao = textDescricao.Text;
+
+            decimal precoCusto = numericUpDownPrecoDeCusto.Value;
+            decimal precoVenda = numericUpDownPrecoDeVenda.Value;
+            decimal margem = decimal.Parse(textMargem.Text);
+            decimal estoque = numericUpDownStockInicial.Value;
+            decimal estoqueMinimo = numericUpDownStockMinimo.Value;
+
+            bool ativo = checkBoxprodutoAtivo.Checked;
+            DateTime dataCadastro = dateTimePickerDataDeCadastro.Value;
+
+            MessageBox.Show(
+                $"Produto: {nome}\n" +
+                $"Preço Venda: R$ {precoVenda:N2}",
+                "Produto Salvo"
+            );
+        }
     }
 }
