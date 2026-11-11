@@ -1,6 +1,6 @@
 ﻿namespace lab_CadastroDeProdutos
 {
-    partial class Form1
+    partial class FormCadastrarProduto
     {
         /// <summary>
         /// Variável de designer necessária.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCadastrarProduto));
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -36,7 +36,6 @@
             this.comboBoxCategoria = new System.Windows.Forms.ComboBox();
             this.txtDescricao = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtFornecedor = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -63,6 +62,7 @@
             this.buttonLimpar = new System.Windows.Forms.Button();
             this.buttonExcluir = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.comboBoxFornecedor = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -112,10 +112,10 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.comboBoxFornecedor);
             this.groupBox1.Controls.Add(this.comboBoxCategoria);
             this.groupBox1.Controls.Add(this.txtDescricao);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.txtFornecedor);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
@@ -169,14 +169,6 @@
             this.label6.Size = new System.Drawing.Size(65, 15);
             this.label6.TabIndex = 8;
             this.label6.Text = "Descrição:";
-            // 
-            // txtFornecedor
-            // 
-            this.txtFornecedor.Location = new System.Drawing.Point(6, 91);
-            this.txtFornecedor.Margin = new System.Windows.Forms.Padding(2);
-            this.txtFornecedor.Name = "txtFornecedor";
-            this.txtFornecedor.Size = new System.Drawing.Size(196, 21);
-            this.txtFornecedor.TabIndex = 7;
             // 
             // label5
             // 
@@ -268,12 +260,6 @@
             // 
             // numericStockMinimo
             // 
-            this.numericStockMinimo.DecimalPlaces = 2;
-            this.numericStockMinimo.Increment = new decimal(new int[] {
-            50,
-            0,
-            0,
-            131072});
             this.numericStockMinimo.Location = new System.Drawing.Point(291, 77);
             this.numericStockMinimo.Margin = new System.Windows.Forms.Padding(2);
             this.numericStockMinimo.Name = "numericStockMinimo";
@@ -305,6 +291,7 @@
             this.numericPrecoDeVenda.Name = "numericPrecoDeVenda";
             this.numericPrecoDeVenda.Size = new System.Drawing.Size(55, 21);
             this.numericPrecoDeVenda.TabIndex = 16;
+            this.numericPrecoDeVenda.ValueChanged += new System.EventHandler(this.numericPrecoDeVenda_ValueChanged);
             // 
             // label10
             // 
@@ -320,12 +307,6 @@
             // 
             // numericStockInicial
             // 
-            this.numericStockInicial.DecimalPlaces = 2;
-            this.numericStockInicial.Increment = new decimal(new int[] {
-            50,
-            0,
-            0,
-            131072});
             this.numericStockInicial.Location = new System.Drawing.Point(85, 79);
             this.numericStockInicial.Margin = new System.Windows.Forms.Padding(2);
             this.numericStockInicial.Name = "numericStockInicial";
@@ -377,6 +358,7 @@
             this.numericPrecoDeCusto.Name = "numericPrecoDeCusto";
             this.numericPrecoDeCusto.Size = new System.Drawing.Size(60, 21);
             this.numericPrecoDeCusto.TabIndex = 11;
+            this.numericPrecoDeCusto.ValueChanged += new System.EventHandler(this.numericPrecoDeCusto_ValueChanged);
             // 
             // label7
             // 
@@ -449,6 +431,7 @@
             this.buttonNovo.TabIndex = 20;
             this.buttonNovo.Text = "➕ Novo";
             this.buttonNovo.UseVisualStyleBackColor = true;
+            this.buttonNovo.Click += new System.EventHandler(this.buttonNovo_Click);
             // 
             // buttonSalvar
             // 
@@ -470,6 +453,7 @@
             this.buttonLimpar.TabIndex = 22;
             this.buttonLimpar.Text = "🧹 Limpar\n";
             this.buttonLimpar.UseVisualStyleBackColor = true;
+            this.buttonLimpar.Click += new System.EventHandler(this.buttonLimpar_Click);
             // 
             // buttonExcluir
             // 
@@ -480,6 +464,7 @@
             this.buttonExcluir.TabIndex = 23;
             this.buttonExcluir.Text = "🗑️ Excluir";
             this.buttonExcluir.UseVisualStyleBackColor = true;
+            this.buttonExcluir.Click += new System.EventHandler(this.buttonExcluir_Click);
             // 
             // panel2
             // 
@@ -494,7 +479,23 @@
             this.panel2.Size = new System.Drawing.Size(737, 43);
             this.panel2.TabIndex = 24;
             // 
-            // Form1
+            // comboBoxFornecedor
+            // 
+            this.comboBoxFornecedor.FormattingEnabled = true;
+            this.comboBoxFornecedor.Items.AddRange(new object[] {
+            "Apple",
+            "Camil",
+            "Nike",
+            "Coca Cola",
+            "Colgate",
+            "Outros"});
+            this.comboBoxFornecedor.Location = new System.Drawing.Point(6, 91);
+            this.comboBoxFornecedor.Margin = new System.Windows.Forms.Padding(2);
+            this.comboBoxFornecedor.Name = "comboBoxFornecedor";
+            this.comboBoxFornecedor.Size = new System.Drawing.Size(134, 23);
+            this.comboBoxFornecedor.TabIndex = 11;
+            // 
+            // FormCadastrarProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -505,8 +506,9 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "Form1";
+            this.Name = "FormCadastrarProduto";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.FormCadastrarProduto_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -537,7 +539,6 @@
         private System.Windows.Forms.TextBox txtNomeDoProduto;
         private System.Windows.Forms.TextBox txtDescricao;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtFornecedor;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label7;
@@ -561,6 +562,7 @@
         private System.Windows.Forms.ComboBox comboBoxCategoria;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ComboBox comboBoxFornecedor;
     }
 }
 
