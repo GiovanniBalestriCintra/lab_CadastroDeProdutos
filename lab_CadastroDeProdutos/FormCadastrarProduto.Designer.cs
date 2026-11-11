@@ -232,7 +232,7 @@
             this.txtCodigo.Margin = new System.Windows.Forms.Padding(2);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(113, 21);
-            this.txtCodigo.TabIndex = 0;
+            this.txtCodigo.TabIndex = 10;
             this.txtCodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // groupBox2

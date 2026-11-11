@@ -21,6 +21,9 @@ namespace lab_CadastroDeProdutos
         private void FormCadastrarProduto_Load(object sender, EventArgs e)
         {
 
+            txtNomeDoProduto.Focus();
+            checkProdutoAtivo.Checked = true;
+
         }
 
         // Método para limpar o formulário
