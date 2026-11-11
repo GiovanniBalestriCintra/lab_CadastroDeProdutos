@@ -326,7 +326,7 @@
             0,
             0,
             131072});
-            this.numericStockInicial.Location = new System.Drawing.Point(108, 80);
+            this.numericStockInicial.Location = new System.Drawing.Point(85, 79);
             this.numericStockInicial.Margin = new System.Windows.Forms.Padding(2);
             this.numericStockInicial.Name = "numericStockInicial";
             this.numericStockInicial.Size = new System.Drawing.Size(61, 21);
@@ -346,7 +346,7 @@
             // 
             // txtMargem
             // 
-            this.txtMargem.Location = new System.Drawing.Point(94, 48);
+            this.txtMargem.Location = new System.Drawing.Point(102, 47);
             this.txtMargem.Margin = new System.Windows.Forms.Padding(2);
             this.txtMargem.Name = "txtMargem";
             this.txtMargem.Size = new System.Drawing.Size(86, 21);
@@ -372,7 +372,7 @@
             0,
             0,
             131072});
-            this.numericPrecoDeCusto.Location = new System.Drawing.Point(120, 20);
+            this.numericPrecoDeCusto.Location = new System.Drawing.Point(128, 20);
             this.numericPrecoDeCusto.Margin = new System.Windows.Forms.Padding(2);
             this.numericPrecoDeCusto.Name = "numericPrecoDeCusto";
             this.numericPrecoDeCusto.Size = new System.Drawing.Size(60, 21);
